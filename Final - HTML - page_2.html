@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="final_2.css">
+	<meta charset="utf-8">
+	<title>QA TP</title>
+</head>
+<body>
+<header>Manual Testing</header>
+<blockquote><i><b><span style="color: black; font-size: 2em">"</span>When you buy a pear, you can instantly evaluate its quality: the size and shape, ripeness, the absence of visible bruising. But only as you take the first bite, will you be able to see if the pear is really that good. Even an extremely good-looking pear might taste sour or have a worm in it.<span style="color: black; font-size: 2em">"</span></b></i></blockquote>
+<p>The same applies to almost any product, be it a physical object or a piece of software. A website you find on the Internet might seem fine at first, but as you scroll down, go to another page, or try to send a contact request, it can start showing some design flaws and errors.</p>
+<p>This makes quality control so important in every field, where an end-user product is created. Yet, a sour pear won’t cause as much damage as a self-driving car with poor quality autopilot software. A single error in an EHR system might put a patient’s life at risk, while an eCommerce website that has performance issues might cost the owner millions of dollars in revenue.</p>
+<p>Here we will share our insights on the quality assurance and testing process, our best practices and preferred strategies.</p>
+<hr>
+<h2><a name="top">Manual Testing Program Content</a></h2>
+<ol>
+	<li><a href="#p1">The Concept of Software Quality: Quality Assurance (QA), Quality Control (QC) and Testing</a></li>
+	<li><a href="#p2">The Main Principles of Software Testing</a></li>
+	<li><a href="#p3">The Role of Testing in Software Development Life Cycle</a></li>
+	<li><a href="#p4">The Process of Software Testing in Practice</a></li>
+	<li><a href="#p5">The Levels of Software Testing</a></li>
+	<li><a href="#p6">The Methods of Software Testing</a></li>
+	<li><a href="#p7">The Types of Software Testing</a></li>
+	<li><a href="#p8">Regression Testing</a></li>
+</ol>
+<hr>
+<h3><a name="p1">1. The Concept of Software Quality: Quality Assurance (QA), Quality Control (QC) and Testing</a></h3>
+<p>In order to make sure the released software is safe and functions as expected, the concept of software quality was introduced. It is often defined as “the degree of conformance to explicit or implicit requirements and expectations”. These so-called explicit and implicit expectations correspond to the two basic levels of software quality:
+	<ul>
+		<li><b>Functional</b> - the product’s compliance with functional (explicit) requirements and design specifications. This aspect focuses on the practical use of software, from the point of view of the user: its features, performance, ease of use, absence of defects.</li>
+		<li><b>Non-Functional</b> - system’s inner characteristics and architecture, i.e. structural (implicit) requirements. This includes the code maintainability, understandability, efficiency, and security.</li>
+	</ul></p>
+	<p>The structural quality of the software is usually hard to manage: It relies mostly on the expertise of the engineering team and can be assured through code review, analysis and refactoring. At the same time, functional aspect can be assured through a set of dedicated quality management activities, which includes <b>quality assurance, quality control, and testing</b>.</p>
+	<p>Often used interchangeably, the three terms refer to slightly different aspects of software quality management. Despite a common goal of delivering a product of the best possible quality, both structurally and functionally, they use different approaches to this task.</p>
+	<p><b>Quality Assurance</b> is a broad term, explained on the Google Testing Blog as “the continuous and consistent improvement and maintenance of process that enables the QC job”. As follows from the definition, QA focuses more on organizational aspects of quality management, monitoring the consistency of the production process.</p>
+	<p>Through <b>Quality Control</b> the team verifies the product’s compliance with the functional requirements. As defined by Investopedia, it is a “process through which a business seeks to ensure that product quality is maintained or improved and manufacturing errors are reduced or eliminated”. This activity is applied to the finished product and performed before the product release. In terms of manufacturing industry, it is similar to pulling a random item from an assembly line to see if it complies with the technical specs.</p>
+	<p><b>Testing</b> is the basic activity aimed at detecting and solving technical issues in the software source code and assessing the overall product usability, performance, security, and compatibility. It has a very narrow focus and is performed by the test engineers in parallel with the development process or at the dedicated testing stage (depending on the methodological approach to the software development cycle).</p>
+	<table>
+		<h4>The concepts of quality assurance, quality control, and testing compared</h4>
+		<tr>
+			<th></th>
+			<th>QA</th>
+			<th>QC</th>
+			<th>Testing</th>
+		</tr>
+		<tr>
+			<td><b>Purpose</b></td>
+			<td>Setting up adequate process, introducing the standarts of quality to prevent the errors and flaws in the product</td>
+			<td>Making sure that the product corresponds to the requirements and specs before it is released</td>
+			<td>Detecting and solving software errors and flaws</td>
+		</tr>
+		<tr>
+			<td><b>Focus</b></td>
+			<td>Processes</td>
+			<td>Product as a whole</td>
+			<td>Source code and design</td>
+		</tr>
+		<tr>
+			<td><b>What</b></td>
+			<td>Prevention</td>
+			<td>Verification</td>
+			<td>Detection</td>
+		</tr>
+		<tr>
+			<td><b>Who</b></td>
+			<td>The team including the stakeholders</td>
+			<td>The team</td>
+			<td>Test engineers<br>Developers</td>
+		</tr>
+		<tr>
+			<td><b>When</b></td>
+			<td>Throughout the process</td>
+			<td>Before the release</td>
+			<td>At the testing stage or along the development process</td>
+		</tr>
+	</table>
+	<p>If applied to the process of car manufacturing, having a proper <b>quality assurance process</b> means that every team member understands the requirements and performs his/her work according to the commonly accepted guidelines. Namely, it is used to make sure that every single action is performed in the right order, every detail is properly implemented and the overall processes are consistent so that nothing can cause a negative impact on the end product.</p>
+	<p><b>Quality control</b> can be compared to having a senior manager walk into a production department and pick a random car for an examination and test drive. Testing activities, in this case, refer to the process of checking every joint, every mechanism separately, as well as the whole product, whether manually or automatically, conducting crash tests, performance tests, and actual or simulated test drives.</p>
+	<p>Due to its hands-on approach, <b>software testing activities</b> remain a subject of heated discussion. That is why we will focus primarily on this aspect of software quality management in this paper. But before we get into the details, let’s define the main principles of software testing.</p>
+	<div class="wrapper">
+		<div class="buttons">
+			<button class="top"><a href="#top">Content</a></button>
+		</div>
+	</div>
+	<hr>
+	<h3><a name="p2">2. The Main Principles of Software Testing</a></h3>
+	<p>Formulated over the past 40 years, the seven principles of software testing represent the ground rules for the process. These are:
+		<ol>
+			<li><b>Testing shows presence of mistakes.</b> Testing is aimed at detecting the defects within a piece of software. But no matter how thoroughly the product is tested, we can never be 100 percent sure that there are no defects. We can only use testing to reduce the number of unfound issues.</li>
+			<li><b>Exhaustive testing is impossible.</b> There is no way to test all combinations of data inputs, scenarios, and preconditions within an application. For example, if a single app screen contains 10 input fields with 3 possible value options each, this means to cover all possible combinations, test engineers would need to create 59,049 (310) test scenarios. And what if the app contains 50+ of such screens? In order not to spend weeks creating millions of such less possible scenarios, it is better to focus on potentially more significant ones.</li>
+			<li><b>Early testing.</b> As mentioned above, the cost of an error grows exponentially throughout the stages of the SDLC. Therefore it is important to start testing the software as soon as possible so that the detected issues are resolved and do not snowball.</li>
+			<li><b>Defect clustering.</b> This principle is often referred to as an application of the Pareto principle to software testing. This means that approximately 80 percent of all errors are usually found in only 20 percent of the system modules. Therefore, if a defect is found in a particular module of a software program, the chances are there might be other defects. That is why it makes sense to test that area of the product thoroughly.</li>
+			<li><b>Pesticide paradox.</b> Running the same set of tests again and again won’t help you find more issues. As soon as the detected errors are fixed, these test scenarios become useless. Therefore, it is important to review and update the tests regularly in order to adapt and potentially find more errors.</li>
+			<li><b>Testing is context dependent.</b> Depending on their purpose or industry, different applications should be tested differently. While safety could be of primary importance for a fintech product, it is less important for a corporate website. The latter, in its turn, puts an emphasis on usability and speed.</li>
+			<li><b>Absence-of-errors fallacy.</b> The complete absence of errors in your product does not necessarily mean its success. No matter how much time you have spent polishing your code or improving the functionality if your product is not useful or does not meet the user expectations it won’t be adopted by the target audience.</li>
+		</ol>
+	</p>
+	<p>Some sources note other principles in addition to the basic ones:
+		<ul>
+			<li>Testing must be an independent process handled by unbiased professionals.</li>
+			<li>Test for invalid and unexpected input values as well as valid and expected ones.</li>
+			<li>Testing should be performed only on a static piece of software (no changes should be made in the process of testing).</li>
+			<li>Use exhaustive and comprehensive documentation to define the expected test results.</li>
+		</ul>
+	</p>
+	<div class="wrapper">
+		<div class="buttons">
+			<button class="top"><a href="#top">Content</a></button>
+		</div>
+	</div>
+	<hr>
+	<h3><a name="p3">3. The Role of Testing in Software Development Life Cycle</a></h3>
+	<h4>Waterfall Model</h4>
+	<p>Representing a traditional software development life cycle, the Waterfall model includes 6 consecutive phases: planning, analysis, design, implementation, testing, and maintenance.</p>
+	<img src="file:///C:/Users/Valea/Desktop/Four%20paws.html/images/1-est.-wp-1024x585.png" alt="Waterfall Development Cycle" width="350" height="250" class="zoom">
+	<br>
+	<p>In the testing phase a product, already designed and coded, is being thoroughly tested before the release. However, the practice shows that software errors and defects detected at this stage might be too expensive to fix, as the cost of an error tends to increase throughout the software development process.</p>
+	<p>For example, if there is an error in the specifications, detecting it early in the planning stage wouldn’t cause significant losses to your business. However, the damage grows exponentially throughout the further stages of the process. If such an error is detected at the design stage, you will need to rework your designs to fix it. But if you aren’t able to detect the mistake before the product is built, you might need to make some major changes to the design as well as the source code. This will require a significant amount of effort and investment.</p>
+	<p>The same is the case for errors produced in the process of implementation. If a feature has a flaw in its logic, building more functionality on top of it might cause a serious damage in the long run. Therefore, it is better to test every feature while the product is still being built. This is where <i>iterative Agile methods</i> prove beneficial.</p>
+	<br>
+	<h4>Agile Testing</h4>
+	<p>Being an integral part of the software development process, Agile breaks the development process into smaller parts, iterations, and sprints. This allows testers to work in parallel with the rest of the team throughout the process and fix the flaws and errors immediately after they occur.</p>
+	<img src="file:///C:/Users/Valea/Desktop/Four%20paws.html/images/2-agile-wp-1024x484.png" alt="Agile Development Cycle" width="350" height="250" class="zoom">
+	<br>
+	<p>The main purpose of such process is to deliver new software features fast and with the best quality. Therefore, this approach is less cost-intensive: Fixing the errors early in the development process, before more problems snowball, is significantly cheaper and requires less effort. Moreover, efficient communication within the team and active involvement of the stakeholders speeds up the process and allows for better-informed decisions. You can find out more about roles and responsibilities in a testing team in our dedicated article.</p>
+	<br>
+	<h4>DevOps Testing</h4>
+	<p>For those who have Agile experience, DevOps gradually becomes a common practice. This new software development methodology requires a high level of coordination between various functions of the deliverable chain, namely development, QA, and operations.</p>
+	<img src="file:///C:/Users/Valea/Desktop/Four%20paws.html/images/1-1.png" alt="A DevOps Life Cycle" width="350" height="250" class="zoom">
+	<br>
+	<p>DevOps is often referred to as an extension of Agile that bridges the gap between development along with QA and operations. However, unlike Agile, DevOps includes the concept of continuous development where the code, written and committed to version control, will be built, deployed, tested and installed in the production environment that is ready to be consumed by the end-user. DevOps places a great emphasis on automation and continuous integration tools that allow for the high-velocity delivery of applications and services.</p>
+	<p>The fact that testing takes place at each stage in the DevOps model changes the role of testers and the overall idea of testing. Therefore, to be able to effectively carry out testing activities, testers are now expected to have technical skills and even be code savvy.</p>
+	<p>According to the PractiTest survey, the Agile trend is an undisputed leader, while almost 90 percent of respondents work at least in some Agile projects within their organizations. That said, a third of the respondents is still applying the Waterfall model in some projects, following a steady decrease in the use of that method. DevOps keeps growing, just slower than before.</p>
+	<div class="wrapper">
+		<div class="buttons">
+			<button class="top"><a href="#top">Content</a></button>
+		</div>
+	</div>
+	<hr>
+	<h3><a name="p4">4. The Process of Software Testing in Practice</a></h3>
+	<p>Organizing a software testing process can be quite challenging. We at AltexSoft follow the three major steps in the software testing process: planning, execution, and reporting.</p>
+	<h4>The stages of software testing</h4>
+	<table>
+		<tr>
+			<th></th>
+			<th>TEST PLANNING</th>
+			<th>TEST EXECUTION</th>
+			<th>TEST REPORTING</th>
+		</tr>
+		<tr>
+			<td><b>Activity</b></td>
+			<td>Software requirements and design review, strategy and plan development</td>
+			<td>Designing the tests, setting up the testing environment, executing the test cases</td>
+			<td>Writing reports and documenting the testing results</td>
+		</tr>
+		<tr>
+			<td><b>Deliverables</b></td>
+			<td>Test Strategy<br>
+				Test Plan<br>
+			Test Estimation</td>
+			<td>Test Cases/Scripts<br>
+				Test Environment<br>
+			Test Results</td>
+			<td>Test Results<br>
+				Test/Defect Metrics<br>
+			Test/Closure Report</td>
+		</tr>
+	</table>
+	<br>
+	<p>While a test strategy is a high-level document, test plan has a more hands-on approach, describing in detail what to test, how to test, when to test and who will do the test. Unlike the static strategy document, that refers to a project as a whole, test plan covers every testing phase separately and is frequently updated by the project manager throughout the process.</p>
+	<p>According to the <i><b>IEEE standard for software test documentation</b></i>, a test plan document should contain the following information:
+		<ul>
+			<li>Test plan identifier</li>
+			<li>Introduction</li>
+			<li>References (list of related documents)</li>
+			<li>Test items (the product and its versions)</li>
+			<li>Features to be tested</li>
+			<li>Features not to be tested</li>
+			<li>Item pass or fail criteria</li>
+			<li>Test approach (testing levels, types, techniques)</li>
+			<li>Suspension criteria</li>
+			<li>Deliverables (Test Plan (this document itself), Test Cases, Test Scripts, Defect/Enhancement Logs, Test Reports)</li>
+			<li>Test environment (hardware, software, tools)</li>
+			<li>Estimates</li>
+			<li>Schedule</li>
+			<li>Staffing and training needs</li>
+			<li>Responsibilities</li>
+			<li>Risks</li>
+			<li>Assumptions and Dependencies</li>
+			<li>Approvals</li>
+		</ul>
+	</p>
+	<p>Writing a plan, which includes all of the listed information, is a time-consuming task. In agile methodologies, with their focus on the product instead of documents, such a waste of time seems insufficient.</p>
+	<br>
+	<h4>Design and Execution</h4>
+	<p>As a starting point for the test execution, we need to define what is subject to testing. In order to answer this question, QA teams develop test cases. In a nutshell, a test case describes the preconditions, desired outcomes, and postconditions of a specific test scenario, aimed at verifying that a feature meets the basic requirements.</p>
+	<p>The next step in test execution is <b>setting up the testing environment</b>. The main criteria for this part are to make sure that the testing environment is as close to the end user’s actual environment (hardware and software) as possible. For example, a typical test environment for a web application should include Web Server, database, OS, and browser.</p>
+	<p>The software testing process identifies two broad categories: <i>static testing</i> and <i>dynamic testing</i>.</p>
+	<p><b>Static testing</b> initially examines the source code and software project documents to catch and prevent defects early in the software testing life cycle. Also called non-execution technique or verification testing, static testing could be performed as inspections, informal and technical reviews, or reviews during walkthrough meetings. Informal review is a cheap testing variant that a QA analyst can conduct anytime during the project. Inspection, also called a formal review, is planned and controlled by the moderator. During the review meeting, errors found by QA analysts are discussed and documented in the review report.</p>
+	<p>As soon as the primary preparations are finished, the team proceeds with <b>dynamic testing</b> where software is tested during execution. This whitepaper has the most focus on the dynamic testing process as a practical and most commonly used way to validate code behavior. Dynamic testing can be described by methods, levels, and types of underlying QA activities. Let’s have a closer look at this segment of the dynamic testing process.</p>
+	<p><b>Software testing methods</b> are the ways the tests are conducted. They include black box testing, white box testing, grey box testing, and ad hoc testing.</p>
+	<p><b>Software testing levels</b> describe stages of software development when testing is conducted. That said, there are four progressive testing levels based on the area they focus on the software development process: <i>unit testing, integration testing, system testing, and user acceptance testing (UAT)</i>.</p>
+	<p><b>Software testing types</b> are the approaches and techniques that are applied at a given level using an appropriate method to address the test requirements in the most efficient manner. They are vast in number while serving different objectives.</p>
+	<p>To sum up, you can do <i>use case testing</i> (a type) during <i>system or acceptance testing</i> (a level) using <i>black box testing</i> (a method).</p>
+	<br>
+	<h4>The software testing processs division: static and dynamic testing</h4>
+	<img src="file:///C:/Users/Valea/Desktop/Four%20paws.html/images/2-1.png" alt="Static & Dynamic Testing" width="500" height="650" class="zoom">
+	<h4>Documentation and Reporting</h4>
+	<p>As there is no perfect software, the testing is never 100 percent complete. It is an ongoing process. However, there exist the so-called “exit criteria”, which define whether there was “enough testing” conducted, based on the risk assessment of the project.</p>
+	<p>There are common points that are present mostly in exit criteria:
+		<ul>
+			<li>Test case execution is 100 percent complete.</li>
+			<li>A system has no high priority defects.</li>
+			<li>Performance of the system is stable regardless of the introduction of new features.</li>
+			<li>The software supports all necessary platforms and/or browsers</li>
+			<li>User acceptance testing is completed.</li>
+		</ul>
+	</p>
+	<p>As soon as all of these criteria (or any custom criteria that you have set in your project) are met, the testing comes to its closure.</p>
+	<p>The testing logs and status reports are documented throughout the process of the test execution. Every issue found in the product should be reported and handled accordingly. The test summary and test closure reports are prepared and provided to the stakeholders. The team holds a retrospective meeting in order to define and document the issues that occurred during the development and improve the process.</p>
+	<div class="wrapper">
+		<div class="buttons">
+			<button class="top"><a href="#top">Content</a></button>
+		</div>
+	</div>
+	<hr>
+	<h3><a name="p5">5. The Levels of Software Testing</a></h3>
+	<p>A piece of software is more than several lines of code. It is usually a multilayer, complex system, incorporating dozens of separate functional components and third-party integrations. Therefore, efficient software testing should go far beyond just finding errors in the source code. Typically, the testing covers the following levels of software.</p>
+	<h4>The levels of Software Testing</h4>
+	<img src="file:///C:/Users/Valea/Desktop/Four%20paws.html/images/levels-of-testing.png" alt="Software testing levels" width="900" height="200" class="zoom">
+	<ul>
+		<li><b>Component/Unit Testing</b></li>
+		<p>The smallest testable part of the software system is often referred to as a unit. Therefore, this testing level is aimed at examining every single unit of a software system in order to make sure that it meets the original requirements and functions as expected. Unit testing is commonly performed early in the development process by the engineers themselves, not the testing team.</p>
+		<li><b>Integration Testing</b></li>
+		<p>The objective of the next testing level is to verify whether the combined units work well together as a group. Integration testing is aimed at detecting the flaws in the interactions between the units within a module. There are two main approaches to this testing: bottom-up and top-down methods. The bottom-up integration testing starts with unit tests, successively increasing the complexity of the software modules under test. The top-down method takes the opposite approach, focusing on high-level combinations first and examining the simple ones later.</p>
+		<li><b>System Testing</b></li>
+		<p>At this level, a complete software system is tested as a whole. This stage serves to verify the product’s compliance with the functional and technical requirements and overall quality standards. System testing should be performed by a highly professional testing team in an environment as close to the real business use scenario as possible.</p>
+		<li><b>User Acceptance Testing</b></li>
+		<p>This is the last stage of the testing process, where the product is validated against the end user requirements and for accuracy. This final step helps the team decide if the product is ready to be shipped or not. While small issues should be detected and resolved earlier in the process, this testing level focuses on overall system quality, from content and UI to performance issues. The acceptance stage might be followed by an alpha and beta testing, allowing a small number of actual users to try out the software before it is officially released.</p>
+	</ul>
+	<h4>The levels of Software Testing compared</h4>
+	<table>
+		<tr>
+			<th></th>
+			<th>Unit testing</th>
+			<th>Integration</th>
+			<th>System</th>
+			<th>Acceptance</th>
+		</tr>
+		<tr>
+			<td><b>Why</b></td>
+			<td>To ensure code is developed correctly</td>
+			<td>To make sure the ties between the system components function as required</td>
+			<td>To ensure the whole system works well when integrated</td>
+			<td>To ensure customers and end user expectations are met</td>
+		</tr>
+		<tr>
+			<td><b>Who</b></td>
+			<td>Developers / Technical Architects</td>
+			<td>Developers / Technical Architects</td>
+			<td>SDET / Manual QA / Business Analyst / Product Owner</td>
+			<td>Developer / SDET / Product Owner / Product End User</td>
+		</tr>
+		<tr>
+			<td><b>What</b></td>
+			<td>All new code + refactoring of legasy code as well as Javascript unit Testing</td>
+			<td>New web services, components, controllers, etc.</td>
+			<td>Scenario Testing, User flows and typical User Journeys, Performance and Security testin</td>
+			<td>Verifying acceptance tests on the stories, verification of features</td>
+		</tr>
+		<tr>
+			<td><b>When</b></td>
+			<td>As soon as new code is written</td>
+			<td>As soon as new components are added</td>
+			<td>When the product is complete</td>
+			<td>When the product is ready to be shipped</td>
+		</tr>
+		<tr>
+			<td><b>Where</b></td>
+			<td>Local Dev + Continuous Integration (CI as a part of the build)</td>
+			<td>Local Dev + CI (part of the build)</td>
+			<td>Staging Environment</td>
+			<td>CI / Test Environment</td>
+		</tr>
+	</table>
+	<br>
+	<p>In Agile software development, the testing typically represents an iterative process. While the levels generally refer to the complete product, they can also be applied to every added feature. In this case, every small unit of the new functionality is being verified. Then the engineers check the interconnections between these units, the way the feature integrates with the rest of the system and if the new update is ready to be shipped.</p>
+	<div class="wrapper">
+		<div class="buttons">
+			<button class="top"><a href="#top">Content</a></button>
+		</div>
+	</div>
+	<hr>
+	<h3><a name="p6">6. The Methods of Software Testing</a></h3>
+	<ul>
+		<li><b>Black Box Testing</b></li>
+		<p>This method gets its name because a QA engineer focuses on the inputs and the expected outputs without knowing how the application works internally and how these inputs are processed. The purpose of this method is to check the functionality of the software making sure that it works correctly and meets user demands. This method can be applied to any testing level but is used mostly for system and user acceptance testing.</p>
+		<li><b>White Box Testing</b></li>
+		<p>Unlike black box testing, this method requires profound knowledge of the code as it entails testing of some structural part of the application. Therefore, generally, the developers directly involved in writing code are responsible for this type of testing. The purpose of white box testing is to enhance security, the flow of inputs/outputs through the application, and to improve design and usability. This method is mainly used at the unit and integration testing levels.</p>
+		<li><b>Grey Box Testing</b></li>
+		<p>This method is a combination of the previous two, since it involves testing of both functional and structural parts of the application. Using this method, an experienced tester has partial knowledge of the internal application structure and based on this knowledge can design test cases while still testing from the black-box perspective. This method is mostly applicable to the integration testing level.</p>
+		<li><b>Ad Hoc Testing</b></li>
+		<p>This is an informal testing method as it’s performed without planning and documentation. Conducting tests informally and randomly without any formal, expected results, the tester improvises the steps and arbitrarily executes them. Though defects found with this method are more difficult to reproduce given the absence of written test cases, this approach helps find important defects quickly, something which cannot be done with formal methods.</p>
+	</ul>
+	<div class="wrapper">
+		<div class="buttons">
+			<button class="top"><a href="#top">Content</a></button>
+		</div>
+	</div>
+	<hr>
+	<h3><a name="p7">7. The Types of Software Testing</a></h3>
+	<p>Based on the main objective of the process, testing can be of different types.</p>
+	<p>Based on the main objective of the process, testing can be of different types. Here are the most popular testing types according to the ISTQB survey.</p>
+	<br>
+	<h4>Software Testing Types</h4>
+	<table>
+		<tr>
+			<th>Testing Type</th>
+			<th>Object</th>
+			<th>Method Used</th>
+			<th>Levels os Testing</th>
+		</tr>
+		<tr>
+			<td><b>Functional Testing</b></td>
+			<td>Testing software functions</td>
+			<td>Black Box</td>
+			<td>User acceptance system</td>
+		</tr>
+		<tr>
+			<td><b>Performance Testing</b></td>
+			<td>Testing responsiveness and stability of the system performance under a certain load</td>
+			<td>Black Box</td>
+			<td>Any level</td>
+		</tr>
+		<tr>
+			<td><b>Use Case Testing</b></td>
+			<td>Checking that the path used by the user is working as intended</td>
+			<td>Black Box</td>
+			<td>User acceptance System Integration</td>
+		</tr>
+		<tr>
+			<td><b>Exploratory Testing</b></td>
+			<td>Validating user experience</td>
+			<td>Ad Hoc</td>
+			<td>User Acceptance System</td>
+		</tr>
+		<tr>
+			<td><b>Usability Testing</b></td>
+			<td>Checking that the system is easy to use</td>
+			<td>Black Box</td>
+			<td>User Acceptance System</td>
+		</tr>
+		<tr>
+			<td><b>Security Testing</b></td>
+			<td>Protecting the system</td>
+			<td>White Box</td>
+			<td>System</td>
+		</tr>
+	</table>
+	<br>
+	<li><b>Functional Testing</b></li>
+	<p>Winning 83% of the respondents’ votes, functional testing is the most important testing type. This is to be expected, since without functionality there would be no use of all other non-functional aspects of the system.</p>
+	<p>In functional testing, the system is tested against the functional requirements by feeding it input and examining the output. This type of testing applies the black box method. Consequently, it gives significance not to the processing itself, but rather, on its results. Functional testing is usually performed within the levels of system and acceptance.</p>
+	<p>Typically, the process of functional testing comprises the following set of actions:</p>
+	<ol>
+		<li>Outlines the functions for the software to perform</li>
+		<li>Composes the input data depending on function specifications</li>
+		<li>Determines the output depending on function specifications</li>
+		<li>Executes the test case</li>
+		<li>Juxtaposes the received and expected outputs</li>
+	</ol>
+	<li><b>Performance Testing</b></li>
+	<p>Performance testing has been selected by 60.7 percent of respondents as the most important non-functional testing type. Performance testing is aimed at investigating the responsiveness and stability of the system performance under a certain load.</p>
+	<p>Depending on the workload, a system behavior is evaluated by different kinds of performance testing:</p>
+	<ul>
+		<li><b>Load Testing</b> —  at continuously increasing workload</li>
+		<li><b>Stress Testing</b> — at or beyond the limits of the anticipated workload</li>
+		<li><b>Endurance Testing</b> — at continuous and significant workload</li>
+		<li><b>Spike Testing</b> — at suddenly and substantially increased workload</li>
+	</ul>
+	<li><b>Use Case Testing</b></li>
+	<p>It’s the most widely used testing technique, followed by exploratory testing. Use case describes how a system will respond to a given scenario created by the user. It is user-oriented and focuses on the actions and the actor, not taking into account the system input and output. Keeping the project concepts in mind, developers write use cases and after completing them, the behavior of the system is tested accordingly. Testers, in their turn, use them to create test cases.</p>
+	<p>Use case testing is applied widely in developing tests at system or acceptance levels. It also helps uncover the defects in integration testing. Use case testing checks whether the path used by the user is working as intended and makes sure the tasks can be accomplished successfully. Applying use case testing, analysts can detect shortcomings and modify the system so that it attains efficiency and accuracy.</p>
+	<li><b>Exploratory Testing</b></li>
+	<p>The exploratory testing technique was first described by Cem Kaner, a software engineering professor and consumer advocate, as <i>“a style of software testing that emphasizes the personal freedom and responsibility of the individual tester to continually optimize the value of her work by treating test-related learning, test design, test execution, and test result interpretation as mutually supportive activities that run in parallel throughout the project.”</i></p>
+	<p>Using the ad hoc method, exploratory testing does not rely on predefined and documented test cases and test steps as most testing types do. Instead, it is an interactive and free-form process, with the main focus on validating user experience, not code. It has much in common with the ad hoc or intuitive testing but is more systematic. Applying exploratory testing, skilled testers can provide valuable and auditable results.</p>
+	<li><b>Usability Testing</b></li>
+	<p>Chosen by 44.1% of respondents, usability testing is performed from the end user’s perspective to see if the system is easy to use. This testing type is not to be confused with user acceptance testing. The latter verifies that the final product meets the set requirements; the former ensures that the implementation approach will work for the user.</p>
+	<div class="wrapper">
+		<div class="buttons">
+			<button class="top"><a href="#top">Content</a></button>
+		</div>
+	</div>
+	<hr>
+	<h3><a name="p8">8. Regression Testing</a></h3>
+	<p>Regression testing is the practice of verifying software behavior after updates to ensure that the changes haven’t impacted existing system functions, stability, and overall integrity. Regression testing can be applied to all levels and with all types of testing procedures but the most common way is to run regression testing according to use cases. Regression quality assurance workflow can be automated to avoid repetitive manual tests after each update. There are multiple regression testing techniques:</p>
+	<ul>
+		<li>Retesting all test cases</li>
+		<li>Selecting specific test cases</li>
+		<li>Prioritizing test cases to verify the most critical ones first and then test the rest</li>
+		<li>Hybrid techniques</li>
+	</ul>
+	<div class="wrapper">
+		<div class="buttons">
+			<button class="top"><a href="#top">Content</a></button>
+		</div>
+	</div>
+	<hr>
+</body>
+</html>
