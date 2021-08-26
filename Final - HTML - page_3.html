@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="final_2.css">
+	<meta charset="utf-8">
+	<title>SQL</title>
+</head>
+<body>
+	<header>SQL</header>
+	<h2>Introduction to SQL</h2>
+	<p><b>SQL</b> is a <b>Structured Query Language</b> for accessing and manipulating databases.</p>
+	<p>SQL statements are used to perform tasks such as update data on a database, or retrieve data from a database.</p>
+	<p>The standard SQL commands such as <b>"Select"</b>, <b>"Insert"</b>, <b>"Update"</b>, <b>"Delete"</b>, <b>"Create"</b>, and <b>"Drop"</b> can be used to accomplish almost everything that one needs to do with a database.</p>
+	<hr>
+	<h2><b>What can SQL do?</b></h2>
+	<ul>
+		<li>SQL can execute queries against a database</li>
+		<li>SQL can retrieve data from a database</li>
+		<li>SQL can insert records in a database</li>
+		<li>SQL can update records in a database</li>
+		<li>SQL can delete records from a database</li>
+		<li>SQL can create new databases</li>
+		<li>SQL can create new tables in a database</li>
+		<li>SQL can create stored procedures in a database</li>
+		<li>SQL can create views in a database</li>
+		<li>SQL can set permissions on tables, procedures, and views</li>
+	</ul>
+	<hr>
+	<h2><b>RDBMS</b></h2>
+	<p><b>RDBMS</b> stands for <b>Relational Database Management System</b>.</p>
+	<p>RDBMS is the basis for SQL, and for all modern database systems such as <i>MS SQL Server, IBM DB2, Oracle, MySQL,</i> and <i>Microsoft Access</i>.</p>
+	<p>The data in RDBMS is stored in database objects called <i>tables</i>. A <b>table</b> is a collection of related data entries and it consists of <i>columns</i> and <i>rows</i>.</p>
+	<p>Every table is broken up into smaller entities called <i>fields</i>. A <b>field</b> is a column in a table that is designed to maintain specific information about every record in the table.</p>
+	<p>A record, also called a <b>row</b>, is each individual entry that exists in a table. A record is a horizontal entity in a table.</p>
+	<p>A <b>column</b> is a vertical entity in a table that contains all information associated with a specific field in a table.</p>
+	<hr>
+	<h2><b><a name="top">Some of The Most Important SQL Commands</b></h2>
+	<ol>
+		<li><b><a href="#sel">SELECT</a></b> - extracts data from a database</li>
+		<li><b><a href="#ins">INSERT</a></b> - inserts new data into a database</li>
+		<li><b><a href="#upd">UPDATE</a></b> - updates data in a database</li>
+		<li><b><a href="#del">DELETE</a></b> - deletes data from a database</li>
+		<li><b><a href="#cre">CREATE</a></b> - creates a new table, a view of a table or other objects in a database</li>
+	</ol>
+	<p><b><i>NOTE:</i></b></p>
+	<p>SQL keywords are <u>NOT case sensitive</u>: <mark>select</mark> is the same as <mark>SELECT</mark></p>
+	<hr>
+	<ol>
+		<li><h3><b><a name="sel">SELECT Query</a></b></h3></li>
+		<p><b>SYNTAX ORDERING</b></p>
+		<ul>
+			<li><b>SELECT</b> - The SQL SELECT statement is used to retrieve records from one or more tables in your SQL database. The records retrieved are known as a result set.</li>
+			<li><b>FROM</b> - The SQL FROM clause is used to list the tables and any JOINs required for the SQL statement.</li>
+			<li><b>WHERE</b> - The SQL WHERE clause is used to filter the results and apply conditions in a SELECT, INSERT, UPDATE, or DELETE statement.</li>
+			<li><b>GROUP BY</b> - The SQL GROUP BY clause can be used in a SELECT statement to collect data across multiple records and group the results by one or more columns.</li>
+			<li><b>HAVING</b> - The SQL HAVING clause is used in combination with the GROUP BY clause to restrict the groups of returned rows to only those whose the condition is TRUE.</li>
+			<li><b>ORDER BY</b> - The SQL ORDER BY clause is used to sort the records in the result set for a SELECT statement.</li>
+		</ul>
+		<p>The syntax for the SELECT statement in SQL is:</p>
+		<div class="sqltut">
+			SELECT expressions<br>
+			FROM tables<br>
+			[WHERE conditions]<br>
+			GROUP BY expression1, expression2, ... expression_n<br>
+			[ORDER BY expression [ ASC | DESC ]]<br>
+			[ORDER BY expression [ ASC | DESC ]];<br>
+		</div>
+		<dl>
+			<dt><b>expressions</b></dt>
+			<dd>The columns or calculations that you wish to retrieve.</dd>
+			<br>
+			<dt><b>tables</b></dt>
+			<dd>The tables that you wish to retrieve records from. There must be at least one table listed in the FROM clause.</dd>
+			<br>
+			<dt><b>WHERE conditions</b></dt>
+			<dd>Optional. The conditions that must be met for the records to be selected. If no conditions are provided, then all records will be selected.</dd>
+			<br>
+			<dt><b>ORDER BY expression</b></dt>
+			<dd>Optional. The expression used to sort the records in the result set. If more than one expression is provided, the values should be comma separated.</dd>
+			<br>
+			<dt><b>ASC</b></dt>
+			<dd>Optional. ASC sorts the result set in ascending order by expression. This is the default behavior, if no modifier is provider.</dd>
+			<br>
+			<dt><b>DESC</b></dt>
+			<dd>Optional. DESC sorts the result set in descending order by expression.</dd>
+			<br>
+			<dt><b>expression1, expression2, ... expression_n</b></dt>
+			<dd>Expressions that are not encapsulated within an aggregate function and must be included in the GROUP BY Clause at the end of the SQL statement.</dd>
+		</dl>
+		<p>Use <b>*</b> for selecting ALL columns from the tables</p>
+		<div class="sqltut">
+			SELECT *<br>
+			FROM tables<br>
+			[WHERE conditions]<br>
+			[ORDER BY expression [ ASC | DESC ]];<br>
+		</div>
+		<br>
+		<div class="wrapper">
+			<div class="buttons">
+				<button class="top"><a href="#top">SQL Commands</a></button>
+			</div>
+		</div>
+		<hr>
+		<li><h3><b><a name="ins">INSERT Query</a></b></h3></li>
+		<p>The SQL INSERT statement is used to insert a one or more records into a table. There are 2 syntaxes for the INSERT statement depending on whether you are inserting one record or multiple records.</p>
+		<p>The syntax for the INSERT statement when <u>inserting a single record</u> in SQL is:</p>
+		<div class="sqltut">
+			INSERT INTO table<br>
+			(column1, column2, ... )<br>
+			VALUES<br>
+			(expression1, expression2, ... );
+		</div>
+		<p>OR</p>
+		<p>The syntax for the INSERT statement when <u>inserting multiple records</u> in SQL is:</p>
+		<div class="sqltut">
+			INSERT INTO table<br>
+			(column1, column2, ... )<br>
+			SELECT expression1, expression2, ...<br>
+			FROM source_tables<br>
+			[WHERE conditions];
+		</div>
+		<dl>
+			<dt><b>table</b></dt>
+			<dd>The table in which to insert the records.</dd>
+			<br>
+			<dt><b>column1, column2</b></dt>
+			<dd>These are the columns in the table to insert values.</dd>
+			<br>
+			<dt><b>pexpression1, expression2</b></dt>
+			<dd>These are the values to assign to the columns in the table. So column1 would be assigned the value of expression1, column2 would be assigned the value of expression2, and so on.</dd>
+			<br>
+			<dt><b>source_tables</b></dt>
+			<dd>Used when inserting records from another table. This is the source table when performing the insert.</dd>
+			<br>
+			<dt><b>WHERE conditions</b></dt>
+			<dd>Optional. Used when inserting records from another table. These are the conditions that must be met for the records to be inserted.</dd>
+		</dl>
+		<br>
+		<p><b><i>NOTE:</i></b></p>
+		<ul>
+			<li>When inserting records into a table using the SQL INSERT statement, you must provide a value for every NOT NULL column. You can only omit a column from the INSERT statement if the column allows NULL values.</li>
+		</ul>
+		<br>
+		<div class="wrapper">
+			<div class="buttons">
+				<button class="top"><a href="#top">SQL Commands</a></button>
+			</div>
+		</div>
+		<hr>
+		<li><h3><b><a name="upd">UPDATE Query</a></b></h3></li>
+		<p>The SQL UPDATE statement is used to update existing records in the tables.</p>
+		<p>The syntax for the UPDATE statement when <u>updating a table</u> in SQL is:</p>
+		<div class="sqltut">
+			UPDATE table<br>
+			SET column1 = expression1,<br>
+			    column2 = expression2,<br>
+			    ...<br>
+			[WHERE conditions];
+		</div>
+		<p>OR</p>
+		<p>The syntax for the UPDATE statement when <u>updating a table with data from another table</u> is:</p>
+		<div class="sqltut">
+			UPDATE table1<br>
+			SET column1 = (SELECT expression1<br>
+			               FROM table2<br>
+			               WHERE conditions)<br>
+			[WHERE conditions];
+		</div>
+		<p>OR</p>
+		<p>The syntax for the UPDATE statement when <u>updating multiple tables</u> is:</p>
+		<div class="sqltut">
+			UPDATE table1, table2, ...<br>
+			SET column1 = expression1,<br>
+			    column2 = expression2,<br>
+			    ...<br>
+			WHERE table1.column = table2.column<br>
+			[AND conditions];
+		</div>
+		<dl>
+			<dt><b>column1, column2</b></dt>
+			<dd>The columns that you wish to update.</dd>
+			<br>
+			<dt><b>expression1, expression2</b></dt>
+			<dd>These are the new values to assign to the column1, column2. So column1 would be assigned the value of expression1, column2 would be assigned the value of expression2, and so on.</dd>
+			<br>
+			<dt><b>WHERE conditions</b></dt>
+			<dd>Optional. The conditions that must be met for the update to execute. If no conditions are provided, then all records in the table will be updated.</dd>
+			<br>
+		</dl>
+		<div class="wrapper">
+			<div class="buttons">
+				<button class="top"><a href="#top">SQL Commands</a></button>
+			</div>
+		</div>
+		<hr>
+		<li><h3><b><a name="del">DELETE Query</a></b></h3></li>
+		<p>The SQL DELETE statement is a used to delete one or more records from a table.</p>
+		<p>The syntax for the DELETE statement in SQL is:</p>
+		<div class="sqltut">
+			DELETE FROM table<br>
+			[WHERE conditions];
+		</div>
+		<dl>
+			<dt><b>table</b></dt>
+			<dd>The table that you wish to delete records from.</dd>
+			<br>
+			<dt><b>WHERE conditions</b></dt>
+			<dd>Optional. The conditions that must be met for the records to be deleted. If no conditions are provided, all records in the table will be deleted.</dd>
+		</dl>
+		<br>
+		<p><b><i>NOTE:</i></b></p>
+		<ul>
+			<li>You do not need to list fields in the DELETE statement since you are deleting the entire row from the table.</li>
+		</ul>
+		<br>
+		<div class="wrapper">
+			<div class="buttons">
+				<button class="top"><a href="#top">SQL Commands</a></button>
+			</div>
+		</div>
+		<hr>
+		<li><h3><b><a name="cre">CREATE Query</a></b></h3></li>
+		<p>The SQL CREATE TABLE statement allows you to create and define a table.</p>
+		<p>The syntax for the CREATE TABLE statement in SQL is:</p>
+		<div class="sqltut">
+			CREATE TABLE table_name<br>
+			(  <br>
+			  column1 datatype [ NULL | NOT NULL ],<br>
+			  column2 datatype [ NULL | NOT NULL ],<br>
+			  ...<br>
+			);
+		</div>
+		<dl>
+			<dt><b>table_name</b></dt>
+			<dd>The name of the table that you wish to create.</dd>
+			<br>
+			<dt><b>column1, column2</b></dt>
+			<dd>The columns that you wish to create in the table. Each column must have a datatype. The column should either be defined as NULL or NOT NULL and if this value is left blank, the database assumes NULL as the default.</dd>
+		</dl>
+		<div class="wrapper">
+			<div class="buttons">
+				<button class="top"><a href="#top">SQL Commands</a></button>
+			</div>
+		</div>
+	</ol>
+	<footer>
+        <a href="file:///C:/Users/Valea/Desktop/Four%20paws.html/Final%20-%20HTML%20-%20main_page.html"><b>HOME PAGE</b></a>
+        <hr>
+        <p title="All rights reserved &#128523">&#169 Copyright 2021 VO</p>
+    </footer>
+</body>
+</html>
